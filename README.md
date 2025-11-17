@@ -1,3 +1,26 @@
 # Developer_Arena_Task
 
-This program collects the user's name, age, and hobby, then displays a friendly welcome message using the provided information. It validates the age to ensure it's a non-negative number and handles empty inputs gracefully, making the interaction user-friendly and reliable.
+def personal_introduction():
+    name = input("What's your name? ").strip()
+    while not name:
+        name = input("Please enter your name: ").strip()
+        
+    age = input("How old are you? ").strip()
+    while True:
+        try:
+            age_int = int(age)
+            if age_int < 0:
+                raise ValueError("Negative age")
+            break
+        except ValueError:
+            age = input("Please enter a valid non-negative integer for age: ").strip()
+
+    hobby = input("What's your favorite hobby? ").strip()
+    if not hobby:
+        hobby = "no hobby specified"
+
+    print(f"\nWelcome, {name}! 🎉")
+    print(f"You are {age_int} years old and enjoy {hobby}.")
+    print("Nice to meet you!")
+
+personal_introduction()
