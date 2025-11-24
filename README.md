@@ -19,7 +19,7 @@ def personal_introduction():
     if not hobby:
         hobby = "no hobby specified"
 
-    print(f"\nWelcome, {name}! 🎉")
+    print(f"\nWelcome, {name}! ")
     print(f"You are {age_int} years old and enjoy {hobby}.")
     print("Nice to meet you!")
 
