@@ -1,0 +1,41 @@
+def M2G_calculator():
+    print("=== Student Grade Calculator ===")
+    
+    Name = input("Enter your name: ")
+
+    while not Name.replace(" ", "").isalpha():
+        Name = input("Please enter letters only in the Name field: ")
+
+    marks = input("Enter your marks (0–100): ").strip()
+    
+    while True:
+        try:
+            marks = float(marks)
+            if 0 <= marks <= 100:
+                break
+            else:
+                marks = input("Please enter a valid number between 0 and 100: ").strip()
+        except ValueError:
+            marks = input("Invalid input! Enter a number between 0 and 100: ").strip()
+
+    if marks >= 90:
+        grade = "A"
+        message = "Outstanding performance! Keep shining "
+    elif marks >= 80:
+        grade = "B"
+        message = "Great job! You're doing really well "
+    elif marks >= 70:
+        grade = "C"
+        message = "Good effort! Keep improving "
+    elif marks >= 60:
+        grade = "D"
+        message = "You passed! A little more practice will help "
+    else:
+        grade = "F"
+        message = "Don't be discouraged. Keep trying — you have to focus more!"
+
+    print(f"Name: {Name}")
+    print(f"\nYour Grade: {grade}")
+    print(f"Message: {message}")
+
+M2G_calculator()
